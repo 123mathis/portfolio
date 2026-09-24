@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Mathis Dupont, étudiant en informatique et responsable IT en alternance.">
+  <title>Mathis Dupont--Korpys — Portfolio</title>
+
+  <style>
+    :root {
+      --background: #0b0e14;
+      --surface: #121722;
+      --text: #f3f5f7;
+      --muted: #a4adbb;
+      --accent: #72e0bd;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: rgba(11, 14, 20, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span,
+    .accent {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 18px 0;
+      font-size: clamp(2.8rem, 8vw, 5.8rem);
+      line-height: 1.02;
+      letter-spacing: -4px;
+    }
+
+    .hero p,
+    .section-intro {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 19px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #07120f;
+      border-color: var(--accent);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 75px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      letter-spacing: -1.5px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .card {
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin-top: 12px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .tag {
+      padding: 7px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .contact-card {
+      margin-top: 25px;
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    footer {
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 650px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 0.82rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#accueil">MD<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="accueil">
+      <div>
+        <p class="eyebrow">Portfolio — 2026 / 2027</p>
+        <h1>Bonjour, moi c’est <span class="accent">Mathis.</span></h1>
+        <p>
+          Étudiant en B3 à l’ESGI, option SRC, et responsable IT en alternance
+          au campus Skolae. Je m’intéresse à l’informatique, aux systèmes
+          et aux solutions utiles au quotidien.
+        </p>
+        <div class="buttons">
+          <a class="button primary" href="#projets">Découvrir mes projets</a>
+          <a class="button" href="#contact">Me contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="profil">
+      <div class="container">
+        <p class="eyebrow">À propos</p>
+        <h2>Mon profil</h2>
+        <p class="section-intro">
+          En formation informatique à l’ESGI, je développe mes compétences
+          tout en les mettant en pratique dans mon alternance au campus Skolae.
+          J’aime résoudre des problèmes techniques et accompagner les utilisateurs.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Support informatique</span>
+          <span class="tag">Gestion du parc IT</span>
+          <span class="tag">Systèmes & réseaux</span>
+          <span class="tag">Développement</span>
+          <span class="tag">Résolution de problèmes</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <p class="eyebrow">Parcours</p>
+        <h2>Formation & expérience</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Responsable IT en alternance</h3>
+            <p class="accent">Campus Skolae · 2026 – 2027</p>
+            <ul>
+              <li>Accompagnement et assistance des utilisateurs</li>
+              <li>Participation à la gestion du matériel informatique</li>
+              <li>Suivi des besoins et incidents IT</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Bachelor 3 — ESGI</h3>
+            <p class="accent">Option SRC · 2026 – 2027</p>
+            <p>
+              Formation supérieure en informatique, menée en parallèle de mon
+              alternance au campus Skolae.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets">
+      <div class="container">
+        <p class="eyebrow">Réalisations</p>
+        <h2>Mes projets</h2>
+        <p class="section-intro">
+          Voici quelques projets personnels et réalisations informatiques.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Monitoring</h3>
+            <p>
+              Projet personnel de supervision informatique réalisé avec Python.
+              Il comprend notamment une application et des composants de collecte
+              et de gestion des données.
+            </p>
+            <div class="buttons">
+              <a class="button" href="https://github.com/123mathis/monitoring" target="_blank" rel="noopener noreferrer">
+                Voir sur GitHub
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Nouveau projet</h3>
+            <p>
+              Ajoute ici une description de ton prochain projet, les technologies
+              utilisées et ce que tu as appris en le réalisant.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <p class="eyebrow">Échangeons</p>
+        <h2>Me contacter</h2>
+        <div class="contact-card">
+          <p class="section-intro">
+            Tu souhaites échanger à propos de mon parcours ou de mes projets ?
+            Retrouve-moi sur LinkedIn ou GitHub.
+          </p>
+          <div class="buttons">
+            <a class="button primary"
+               href="https://www.linkedin.com/in/mathis-dupont--korpys-12a474295"
+               target="_blank" rel="noopener noreferrer">
+              Mon LinkedIn
+            </a>
+            <a class="button"
+               href="https://github.com/123mathis"
+               target="_blank" rel="noopener noreferrer">
+              Mon GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Mathis Dupont — Portfolio personnel
+    </div>
+  </footer>
+</body>
+</html>
